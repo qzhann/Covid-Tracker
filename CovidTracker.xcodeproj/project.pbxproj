@@ -35,6 +35,10 @@
 		F6F8C23D27869DC2001A4D5E /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C23A27869C87001A4D5E /* StatisticView.swift */; };
 		F6F8C23F2786A374001A4D5E /* StatisticType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C23E2786A374001A4D5E /* StatisticType.swift */; };
 		F6F8C2402786A3BD001A4D5E /* StatisticType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C23E2786A374001A4D5E /* StatisticType.swift */; };
+		F6F8C2422786A52A001A4D5E /* LinePlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C2412786A52A001A4D5E /* LinePlot.swift */; };
+		F6F8C2442786A739001A4D5E /* Number+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C2432786A739001A4D5E /* Number+Helpers.swift */; };
+		F6F8C2452786B307001A4D5E /* LinePlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C2412786A52A001A4D5E /* LinePlot.swift */; };
+		F6F8C2462786B31C001A4D5E /* Number+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C2432786A739001A4D5E /* Number+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +105,8 @@
 		F6F8C2382786988D001A4D5E /* RiskLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskLevel.swift; sourceTree = "<group>"; };
 		F6F8C23A27869C87001A4D5E /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
 		F6F8C23E2786A374001A4D5E /* StatisticType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticType.swift; sourceTree = "<group>"; };
+		F6F8C2412786A52A001A4D5E /* LinePlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinePlot.swift; sourceTree = "<group>"; };
+		F6F8C2432786A739001A4D5E /* Number+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +243,7 @@
 				F6F8C1E427857732001A4D5E /* ContentView.swift */,
 				F6F8C22D27867D71001A4D5E /* CountyView.swift */,
 				F6F8C23A27869C87001A4D5E /* StatisticView.swift */,
+				F6F8C2412786A52A001A4D5E /* LinePlot.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,6 +251,7 @@
 		F6F8C23527869739001A4D5E /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				F6F8C2432786A739001A4D5E /* Number+Helpers.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -410,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6F8C22327867CBB001A4D5E /* CovidTrackerWidget.intentdefinition in Sources */,
+				F6F8C2422786A52A001A4D5E /* LinePlot.swift in Sources */,
 				F6F8C210278578C6001A4D5E /* CentralDataStore.swift in Sources */,
 				F6F8C23027867D82001A4D5E /* County.swift in Sources */,
 				F6F8C20D2785774C001A4D5E /* Day.swift in Sources */,
@@ -418,6 +427,7 @@
 				F6F8C2392786988D001A4D5E /* RiskLevel.swift in Sources */,
 				F6F8C23B27869C87001A4D5E /* StatisticView.swift in Sources */,
 				F6F8C23F2786A374001A4D5E /* StatisticType.swift in Sources */,
+				F6F8C2442786A739001A4D5E /* Number+Helpers.swift in Sources */,
 				F6F8C1E327857732001A4D5E /* CovidTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,10 +457,12 @@
 				F6F8C23D27869DC2001A4D5E /* StatisticView.swift in Sources */,
 				F6F8C23227868780001A4D5E /* County.swift in Sources */,
 				F6F8C2402786A3BD001A4D5E /* StatisticType.swift in Sources */,
+				F6F8C2452786B307001A4D5E /* LinePlot.swift in Sources */,
 				F6F8C2312786873F001A4D5E /* CountyView.swift in Sources */,
 				F6F8C23427868795001A4D5E /* CentralDataStore.swift in Sources */,
 				F6F8C23C27869D78001A4D5E /* RiskLevel.swift in Sources */,
 				F6F8C23327868780001A4D5E /* Day.swift in Sources */,
+				F6F8C2462786B31C001A4D5E /* Number+Helpers.swift in Sources */,
 				F6F8C22227867CBB001A4D5E /* CovidTrackerWidget.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

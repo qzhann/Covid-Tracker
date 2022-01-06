@@ -41,4 +41,14 @@ struct Day {
     }
     
     
+    func average(for type: StatisticType) -> Double {
+        switch type {
+        case .avarageCases:
+            return averageCases
+        case .averageDeaths:
+            return averageDeaths
+        }
+    }
+    
+    
 }

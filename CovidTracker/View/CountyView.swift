@@ -25,7 +25,7 @@ struct CountyView: View {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
                         Text(county.name)
-                            .font(.headline)
+                            .font(.headline.bold())
                         Text(statisticType.description)
                             .font(.subheadline)
                             .foregroundColor(.secondary)
@@ -33,6 +33,8 @@ struct CountyView: View {
                     Spacer()
                     
                 }
+                
+                LinePlot(values: county.days.map { $0.average(for: statisticType) }, color: county.risk(for: statisticType).color)
                 
                 Spacer(minLength: 0)
                 
