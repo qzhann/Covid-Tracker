@@ -12,9 +12,9 @@ import TabularData
 let dateID = ColumnID("date", Date.self)
 let countyID = ColumnID("county", String.self)
 let stateID = ColumnID("state", String.self)
-let casesID = ColumnID("cases", Double.self)
+let casesID = ColumnID("cases", Int.self)
 let casesAverageID = ColumnID("cases_avg", Double.self)
-let deathsID = ColumnID("deaths", Double.self)
+let deathsID = ColumnID("deaths", Int.self)
 let deathsAverageID = ColumnID("deaths_avg", Double.self)
 
 /// Stores the CSV data parsed from the web. This class is usful for storing and managing all csv data from web.

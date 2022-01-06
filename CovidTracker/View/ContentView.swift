@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        CountyView(county: .losAngeles, statisticType: .avarageCases)
+        CountyView(county: .cupertino!, statisticType: .avarageCases)
     }
 }
 

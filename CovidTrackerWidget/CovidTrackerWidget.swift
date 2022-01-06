@@ -45,7 +45,7 @@ struct CovidTrackerWidgetEntryView : View {
 
     var body: some View {
 //        Text(entry.date, style: .time)
-        CountyView(county: .losAngeles, statisticType: .avarageCases)
+        CountyView(county: .cupertino!, statisticType: .avarageCases)
         
     }
 }

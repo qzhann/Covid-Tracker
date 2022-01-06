@@ -32,6 +32,9 @@ struct LinePlot: View {
             LinePlotPath(normalizedValues: normalizedValues, closedFromBelow: true)
                 .fill(LinearGradient(colors: [color, color.opacity(0)], startPoint: .top, endPoint: .bottom))
         }
+        .scaleEffect(CGSize(width: 1, height: 0.95))
+        .clipShape(Rectangle())
+
         
     }
     
@@ -72,6 +75,6 @@ struct LinePlotPath: Shape {
 struct LinePlot_Previews: PreviewProvider {
     static var previews: some View {
         LinePlot(values: [0.5, 0.2, 0.4, 0.3], color: .red)
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+//            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

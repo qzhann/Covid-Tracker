@@ -23,9 +23,9 @@ struct Day {
         self.date = row[dateID]!
         self.county = row[countyID]!
         self.state = row[stateID]!
-        self.cases = row[casesID]!
+        self.cases = Double(row[casesID]!)
         self.averageCases = row[casesAverageID]!
-        self.deaths = row[deathsID]!
+        self.deaths = Double(row[deathsID]!)
         self.averageDeaths = row[deathsAverageID]!
     }
     

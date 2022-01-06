@@ -22,19 +22,23 @@ struct CountyView: View {
             Rectangle().fill(BackgroundStyle())
             
             VStack {
-                HStack(alignment: .top) {
-                    VStack(alignment: .leading) {
-                        Text(county.name)
-                            .font(.headline.bold())
-                        Text(statisticType.description)
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
+                
+                VStack {
+                    HStack(alignment: .top) {
+                        VStack(alignment: .leading) {
+                            Text(county.name)
+                                .font(.headline.bold())
+                            Text(statisticType.description)
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
+                        Spacer()
+                        
                     }
-                    Spacer()
                     
+                    LinePlot(values: county.days.map { $0.average(for: statisticType) }, color: county.risk(for: statisticType).color)
                 }
                 
-                LinePlot(values: county.days.map { $0.average(for: statisticType) }, color: county.risk(for: statisticType).color)
                 
                 Spacer(minLength: 0)
                 
@@ -48,7 +52,8 @@ struct CountyView: View {
 }
 
 extension County {
-    static let losAngeles = County(testName: "Los Angeles")
+    static let sampleCounty = County(testName: "Los Angeles")
+    static let cupertino = County(named: "Santa Clara")
 }
 
 struct SeverityBackground: View {
@@ -70,10 +75,11 @@ struct SeverityBackground: View {
 struct CountyView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CountyView(county: .losAngeles, statisticType: .avarageCases)
-            CountyView(county: .losAngeles, statisticType: .avarageCases)
+            CountyView(county: .sampleCounty, statisticType: .avarageCases)
+            
+            CountyView(county: .sampleCounty, statisticType: .avarageCases)
                 .environment(\.locale, Locale(identifier: "zh-Hans"))
-            CountyView(county: .losAngeles, statisticType: .averageDeaths)
+            CountyView(county: .sampleCounty, statisticType: .averageDeaths)
                 .environment(\.colorScheme, .dark)
         }
         .previewContext(WidgetPreviewContext(family: .systemSmall))

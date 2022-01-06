@@ -6,5 +6,7 @@
 
 #  TODO
 
-## I
+## Return placeholder and actual views in Widget Extension. (This should be quick)
+
+## Ability to configure/search available counties in the Widget settings. (Probably have to use Intention APIs?)
 
