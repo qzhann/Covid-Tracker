@@ -14,12 +14,12 @@ struct County {
     
     /// The days data for the current ``County``, sorted in reverse chronological order.
     var days: [Day]
-    
-    /// Creates a ``County`` using the name. If the county is not found, or does not have any data, this initializer returns nil.
-    init?(named countyName: String) {
-        guard let countyRecents = CentralDataStore.shared.recents(for: countyName) else { return nil }
-        self.name = countyName
-        self.days = countyRecents
+        
+    /// Creates a ``County`` using the location name. If the county is not found, or does not have any data, this initializer returns nil.
+    init?(named locationName: String) {
+        guard let countyRecents = CentralDataStore.shared.recents(for: locationName) else { return nil }
+        self.name = locationName.countyName
+        self.days = countyRecents.reversed()
         self.stateName = countyRecents.first!.state
     }
     
@@ -74,6 +74,10 @@ struct County {
         case .averageDeaths:
             return latestDay.averageDeaths.riskLevel(for: .averageDeaths)
         }
+    }
+    
+    func rawData(for type: StatisticType) -> [Double] {
+        return days.map { $0.average(for: type)}.reversed()
     }
     
     

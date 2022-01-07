@@ -54,9 +54,10 @@ class CentralDataStore {
         self.datas = covidDataFromGithub()
     }
     
-    /// Returns the recent day datas for the specified county. If the county cannot be found, or there are no data for the county, this method returns nil.
-    func recents(for county: String) -> [Day]? {
-        let countyRecentData = datas.recents(county: county).rows.map { Day(fromDataFrameRow: $0) }
+    /// Returns the recent day datas for the specified location. If the location cannot be found, or there are no data for the county, this method returns nil.
+    func recents(for location: String) -> [Day]? {
+        let countyName = location.countyName
+        let countyRecentData = datas.recents(county: countyName).rows.dropLast().map { Day(fromDataFrameRow: $0) }
         if countyRecentData.isEmpty {
             return nil
         } else {

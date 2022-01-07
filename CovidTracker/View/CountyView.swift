@@ -35,8 +35,8 @@ struct CountyView: View {
                         Spacer()
                         
                     }
+                    LinePlot(values: county.rawData(for: statisticType), color: county.risk(for: statisticType).color)
                     
-                    LinePlot(values: county.days.map { $0.average(for: statisticType) }, color: county.risk(for: statisticType).color)
                 }
                 
                 
@@ -53,7 +53,7 @@ struct CountyView: View {
 
 extension County {
     static let sampleCounty = County(testName: "Los Angeles")
-    static let cupertino = County(named: "Santa Clara")
+    static let cupertino = County(named: "Los Angeles")
 }
 
 struct SeverityBackground: View {
@@ -76,12 +76,21 @@ struct CountyView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             CountyView(county: .sampleCounty, statisticType: .avarageCases)
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
             
             CountyView(county: .sampleCounty, statisticType: .avarageCases)
                 .environment(\.locale, Locale(identifier: "zh-Hans"))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+            
             CountyView(county: .sampleCounty, statisticType: .averageDeaths)
                 .environment(\.colorScheme, .dark)
+                .previewContext(WidgetPreviewContext(family: .systemLarge))
+            
+            CountyView(county: .sampleCounty, statisticType: .averageDeaths)
+                .environment(\.colorScheme, .dark)
+                .previewContext(WidgetPreviewContext(family: .systemExtraLarge))
+
+
         }
-        .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
