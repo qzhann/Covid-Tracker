@@ -6,9 +6,4 @@
 
 #  TODO
 
-## Figure out how to "refresh" our widgit. We should have an optional parameter that controls how often the widget is updated. We could do 1 hour for real app, but 1 min for testing. And we should add a "updated how many minutes ago" text to see when its being updated when testing.
-
-## Return placeholder and actual views in Widget Extension. (This should be quick)
-
-## Ability to configure/search available counties in the Widget settings. (Probably have to use Intention APIs?)
-
+## Widget is now being force quit on real-device for using too much memory. I think this is related to using DataFrame to parse the CSV file. Would be great to have a backend that returns information only for the specific county.
