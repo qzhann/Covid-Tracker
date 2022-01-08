@@ -14,9 +14,9 @@ struct Day {
     var county: String
     var state: String
     var cases: Double
-    var averageCases: Double
+    var averageCase: Double
     var deaths: Double
-    var averageDeaths: Double
+    var averageDeath: Double
     
     /// Creates a ``Day`` of data from a data frame row.
     init(fromDataFrameRow row: DataFrame.Row) {
@@ -24,9 +24,9 @@ struct Day {
         self.county = row[countyID]!
         self.state = row[stateID]!
         self.cases = Double(row[casesID]!)
-        self.averageCases = row[casesAverageID]!
+        self.averageCase = row[casesAverageID]!
         self.deaths = Double(row[deathsID]!)
-        self.averageDeaths = row[deathsAverageID]!
+        self.averageDeath = row[deathsAverageID]!
     }
     
     /// Creates a test-only ``Day``.
@@ -35,18 +35,18 @@ struct Day {
         self.county = county
         self.state = state
         self.cases = Double.random(in: casesBase...(1.2 * casesBase))
-        self.averageCases = Double.random(in: (0.8 * casesBase)...casesBase)
+        self.averageCase = Double.random(in: (0.8 * casesBase)...casesBase)
         self.deaths = Double.random(in: 0...deathsBase)
-        self.averageDeaths = Double.random(in: 0...(0.5 * deathsBase))
+        self.averageDeath = Double.random(in: 0...(0.5 * deathsBase))
     }
     
     
-    func average(for type: StatisticType) -> Double {
+    func average(for type: CovidStatisticType) -> Double {
         switch type {
         case .avarageCases:
-            return averageCases
+            return averageCase
         case .averageDeaths:
-            return averageDeaths
+            return averageDeath
         }
     }
     

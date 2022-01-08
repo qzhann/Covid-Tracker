@@ -28,9 +28,9 @@ struct Provider: IntentTimelineProvider {
                 
         var entries: [CovidTimelineEntry] = []
         
-        // Generate a timeline consisting of 2 entries a minute apart, starting from the current date.
+        // Generate a 30-min timeline consisting entries 5 minutes apart, starting from the current date.
         let currentDate = Date()
-        for minuteOffset in 0 ..< 2 {
+        for minuteOffset in stride(from: 0, to: 30, by: 5) {
             let entryDate = Calendar.current.date(byAdding: .minute, value: minuteOffset, to: currentDate)!
             let entry = CovidTimelineEntry(date: entryDate, configuration: configuration)
             entries.append(entry)
@@ -48,56 +48,87 @@ struct CovidTimelineEntry: TimelineEntry {
 
 
 /// A view that's rendered based on the timeline data source, a timeline entry.
-struct CovidTrackerWidgetEntryView : View {
+struct CovidTrackerWidgetTrendView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        if let location = entry.configuration.location, let county = County(named: location) {
-            CountyView(county: county, statisticType: StatisticType(intentStatisticRawValue: entry.configuration.statistics.rawValue))
-                .overlay(alignment: .topTrailing) {
-                    HStack {
-                        Spacer()
-                        Text(entry.date, style: .relative)
-                    }
-                }
-        } else {
-            CountyView(county: County(testName: "Los Angeles Test"), statisticType: StatisticType(intentStatisticRawValue: entry.configuration.statistics.rawValue))
-                .overlay(alignment: .topTrailing) {
-                    HStack {
-                        Spacer()
-                        Text(entry.date, style: .relative)
-                    }
-                }
+        Group {
+            if let location = entry.configuration.location, let county = County(named: location) {
+                CountyTrendView(county: county, statisticType: CovidStatisticType(intentStatisticRawValue: entry.configuration.statistics.rawValue))
+            } else {
+                CountyTrendView(county: County(testName: "Los Angeles"), statisticType: CovidStatisticType(intentStatisticRawValue: entry.configuration.statistics.rawValue))
+            }
         }
-        
-        
-        
+//        .overlay(alignment: .topTrailing) {
+//            HStack {
+//                Spacer()
+//                Text(entry.date, style: .relative).font(.system(.footnote, design: .monospaced))
+//            }
+//        }
+    }
+}
+
+struct CovidTrackerWidgetStatisticView: View {
+    var entry: Provider.Entry
+
+    var body: some View {
+        Group {
+            if let location = entry.configuration.location, let county = County(named: location) {
+                CountyStatisticView(county: county, statisticType: CovidStatisticType(intentStatisticRawValue: entry.configuration.statistics.rawValue))
+            } else {
+                CountyStatisticView(county: County(testName: "Los Angeles"), statisticType: CovidStatisticType(intentStatisticRawValue: entry.configuration.statistics.rawValue))
+            }
+        }
+//        .overlay(alignment: .topTrailing) {
+//            HStack {
+//                Spacer()
+//                Text(entry.date, style: .relative).font(.system(.footnote, design: .monospaced))
+//            }
+//        }
+    }
+}
+
+struct CovidTrackerTrendWidget: Widget {
+    let kind: String = "Trend"
+
+    var body: some WidgetConfiguration {
+        IntentConfiguration(kind: kind, intent: CovidTrackerConfigurationIntent.self, provider: Provider()) { entry in
+            CovidTrackerWidgetTrendView(entry: entry)
+        }
+        .configurationDisplayName("Trend")
+        .description("Track the trend of COVID-19 in your county.")
+    }
+}
+
+struct CovidTrackerStatisticWidget: Widget {
+    let kind: String = "Statistics"
+
+    var body: some WidgetConfiguration {
+        IntentConfiguration(kind: kind, intent: CovidTrackerConfigurationIntent.self, provider: Provider()) { entry in
+            CovidTrackerWidgetStatisticView(entry: entry)
+        }
+        .configurationDisplayName("Statistics")
+        .description("Track the trend of COVID-19 in your county.")
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
 @main
-struct CovidTrackerWidget: Widget {
-    let kind: String = "CovidTrackerWidget"
-
-    var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: CovidTrackerConfigurationIntent.self, provider: Provider()) { entry in
-            CovidTrackerWidgetEntryView(entry: entry)
-        }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
-        .onBackgroundURLSessionEvents { identifier in
-            print("background URL Event \(identifier)")
-            return true
-        } _: { identifier, completion in
-            completion()
-        }
-
+struct CovidTrackerWidgets: WidgetBundle {
+    var body: some Widget {
+        CovidTrackerTrendWidget()
+        CovidTrackerStatisticWidget()
     }
+    
 }
 
 struct CovidTrackerWidget_Previews: PreviewProvider {
     static var previews: some View {
-        CovidTrackerWidgetEntryView(entry: CovidTimelineEntry(date: Date(), configuration: CovidTrackerConfigurationIntent()))
+        CovidTrackerWidgetTrendView(entry: CovidTimelineEntry(date: Date(), configuration: CovidTrackerConfigurationIntent()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
+        
+        CovidTrackerWidgetStatisticView(entry: CovidTimelineEntry(date: Date(), configuration: CovidTrackerConfigurationIntent()))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
+
     }
 }

@@ -38,7 +38,7 @@ class CentralDataStore {
                                locale: Locale(identifier: "en_US"),
                                timeZone: TimeZone(abbreviation: "PST")!)
         )
-        
+                
         let allCSVData = try! DataFrame(
             contentsOfCSVFile: url,
             columns: [dateID.name, countyID.name, stateID.name, casesID.name, casesAverageID.name, deathsID.name, deathsAverageID.name],

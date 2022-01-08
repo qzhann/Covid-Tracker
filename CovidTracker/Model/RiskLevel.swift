@@ -26,7 +26,7 @@ enum RiskLevel {
         case .high:
             return .red
         case .extreme:
-            return .primary
+            return .red
         }
     }
     
@@ -34,7 +34,7 @@ enum RiskLevel {
 
 extension Double {
     /// Returns the risk level for the current number, interpreted using the specified covid statistics type.
-    func riskLevel(for type: StatisticType) -> RiskLevel {
+    func riskLevel(for type: CovidStatisticType) -> RiskLevel {
         switch type {
         case .avarageCases:
             switch self {

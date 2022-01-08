@@ -16,6 +16,8 @@
 		F6CF9B2327880A1900A74543 /* CovidTrackerIntentHandler.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F6CF9B1A27880A1900A74543 /* CovidTrackerIntentHandler.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F6CF9B2727880AE600A74543 /* CovidTrackerWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C21E27867CB8001A4D5E /* CovidTrackerWidget.intentdefinition */; };
 		F6CF9B2827880AF400A74543 /* CountyNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CF9B0F2787FAFC00A74543 /* CountyNames.swift */; };
+		F6CF9B2A2788100300A74543 /* CountyStatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CF9B292788100300A74543 /* CountyStatisticView.swift */; };
+		F6CF9B2B2788116700A74543 /* CountyStatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CF9B292788100300A74543 /* CountyStatisticView.swift */; };
 		F6F8C1E327857732001A4D5E /* CovidTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C1E227857732001A4D5E /* CovidTrackerApp.swift */; };
 		F6F8C1E527857732001A4D5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C1E427857732001A4D5E /* ContentView.swift */; };
 		F6F8C1E727857733001A4D5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6F8C1E627857733001A4D5E /* Assets.xcassets */; };
@@ -32,18 +34,18 @@
 		F6F8C22227867CBB001A4D5E /* CovidTrackerWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C21E27867CB8001A4D5E /* CovidTrackerWidget.intentdefinition */; };
 		F6F8C22327867CBB001A4D5E /* CovidTrackerWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C21E27867CB8001A4D5E /* CovidTrackerWidget.intentdefinition */; };
 		F6F8C22627867CBB001A4D5E /* CovidTrackerWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F6F8C21527867CB8001A4D5E /* CovidTrackerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F6F8C22E27867D71001A4D5E /* CountyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C22D27867D71001A4D5E /* CountyView.swift */; };
+		F6F8C22E27867D71001A4D5E /* CountyTrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C22D27867D71001A4D5E /* CountyTrendView.swift */; };
 		F6F8C23027867D82001A4D5E /* County.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C22F27867D82001A4D5E /* County.swift */; };
-		F6F8C2312786873F001A4D5E /* CountyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C22D27867D71001A4D5E /* CountyView.swift */; };
+		F6F8C2312786873F001A4D5E /* CountyTrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C22D27867D71001A4D5E /* CountyTrendView.swift */; };
 		F6F8C23227868780001A4D5E /* County.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C22F27867D82001A4D5E /* County.swift */; };
 		F6F8C23327868780001A4D5E /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C20C2785774C001A4D5E /* Day.swift */; };
 		F6F8C23427868795001A4D5E /* CentralDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C20F278578C6001A4D5E /* CentralDataStore.swift */; };
 		F6F8C2392786988D001A4D5E /* RiskLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C2382786988D001A4D5E /* RiskLevel.swift */; };
-		F6F8C23B27869C87001A4D5E /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C23A27869C87001A4D5E /* StatisticView.swift */; };
+		F6F8C23B27869C87001A4D5E /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C23A27869C87001A4D5E /* NumberView.swift */; };
 		F6F8C23C27869D78001A4D5E /* RiskLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C2382786988D001A4D5E /* RiskLevel.swift */; };
-		F6F8C23D27869DC2001A4D5E /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C23A27869C87001A4D5E /* StatisticView.swift */; };
-		F6F8C23F2786A374001A4D5E /* StatisticType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C23E2786A374001A4D5E /* StatisticType.swift */; };
-		F6F8C2402786A3BD001A4D5E /* StatisticType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C23E2786A374001A4D5E /* StatisticType.swift */; };
+		F6F8C23D27869DC2001A4D5E /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C23A27869C87001A4D5E /* NumberView.swift */; };
+		F6F8C23F2786A374001A4D5E /* CovidStatisticType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C23E2786A374001A4D5E /* CovidStatisticType.swift */; };
+		F6F8C2402786A3BD001A4D5E /* CovidStatisticType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C23E2786A374001A4D5E /* CovidStatisticType.swift */; };
 		F6F8C2422786A52A001A4D5E /* LinePlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C2412786A52A001A4D5E /* LinePlot.swift */; };
 		F6F8C2442786A739001A4D5E /* Number+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C2432786A739001A4D5E /* Number+Helpers.swift */; };
 		F6F8C2452786B307001A4D5E /* LinePlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F8C2412786A52A001A4D5E /* LinePlot.swift */; };
@@ -104,6 +106,7 @@
 		F6CF9B1B27880A1900A74543 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		F6CF9B1E27880A1900A74543 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		F6CF9B2027880A1900A74543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6CF9B292788100300A74543 /* CountyStatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyStatisticView.swift; sourceTree = "<group>"; };
 		F6F8C1DF27857732001A4D5E /* CovidTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F8C1E227857732001A4D5E /* CovidTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidTrackerApp.swift; sourceTree = "<group>"; };
 		F6F8C1E427857732001A4D5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,11 +127,11 @@
 		F6F8C21E27867CB8001A4D5E /* CovidTrackerWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = CovidTrackerWidget.intentdefinition; sourceTree = "<group>"; };
 		F6F8C21F27867CBB001A4D5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6F8C22127867CBB001A4D5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F6F8C22D27867D71001A4D5E /* CountyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyView.swift; sourceTree = "<group>"; };
+		F6F8C22D27867D71001A4D5E /* CountyTrendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyTrendView.swift; sourceTree = "<group>"; };
 		F6F8C22F27867D82001A4D5E /* County.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = County.swift; sourceTree = "<group>"; };
 		F6F8C2382786988D001A4D5E /* RiskLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskLevel.swift; sourceTree = "<group>"; };
-		F6F8C23A27869C87001A4D5E /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
-		F6F8C23E2786A374001A4D5E /* StatisticType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticType.swift; sourceTree = "<group>"; };
+		F6F8C23A27869C87001A4D5E /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
+		F6F8C23E2786A374001A4D5E /* CovidStatisticType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidStatisticType.swift; sourceTree = "<group>"; };
 		F6F8C2412786A52A001A4D5E /* LinePlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinePlot.swift; sourceTree = "<group>"; };
 		F6F8C2432786A739001A4D5E /* Number+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -278,7 +281,7 @@
 				F6F8C22F27867D82001A4D5E /* County.swift */,
 				F6F8C20C2785774C001A4D5E /* Day.swift */,
 				F6F8C2382786988D001A4D5E /* RiskLevel.swift */,
-				F6F8C23E2786A374001A4D5E /* StatisticType.swift */,
+				F6F8C23E2786A374001A4D5E /* CovidStatisticType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -287,8 +290,9 @@
 			isa = PBXGroup;
 			children = (
 				F6F8C1E427857732001A4D5E /* ContentView.swift */,
-				F6F8C22D27867D71001A4D5E /* CountyView.swift */,
-				F6F8C23A27869C87001A4D5E /* StatisticView.swift */,
+				F6F8C22D27867D71001A4D5E /* CountyTrendView.swift */,
+				F6CF9B292788100300A74543 /* CountyStatisticView.swift */,
+				F6F8C23A27869C87001A4D5E /* NumberView.swift */,
 				F6F8C2412786A52A001A4D5E /* LinePlot.swift */,
 			);
 			path = View;
@@ -511,10 +515,11 @@
 				F6CF9B122787FDD800A74543 /* String+Helpers.swift in Sources */,
 				F6F8C20D2785774C001A4D5E /* Day.swift in Sources */,
 				F6F8C1E527857732001A4D5E /* ContentView.swift in Sources */,
-				F6F8C22E27867D71001A4D5E /* CountyView.swift in Sources */,
+				F6CF9B2A2788100300A74543 /* CountyStatisticView.swift in Sources */,
+				F6F8C22E27867D71001A4D5E /* CountyTrendView.swift in Sources */,
 				F6F8C2392786988D001A4D5E /* RiskLevel.swift in Sources */,
-				F6F8C23B27869C87001A4D5E /* StatisticView.swift in Sources */,
-				F6F8C23F2786A374001A4D5E /* StatisticType.swift in Sources */,
+				F6F8C23B27869C87001A4D5E /* NumberView.swift in Sources */,
+				F6F8C23F2786A374001A4D5E /* CovidStatisticType.swift in Sources */,
 				F6F8C2442786A739001A4D5E /* Number+Helpers.swift in Sources */,
 				F6F8C1E327857732001A4D5E /* CovidTrackerApp.swift in Sources */,
 			);
@@ -542,12 +547,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6F8C21D27867CB8001A4D5E /* CovidTrackerWidget.swift in Sources */,
-				F6F8C23D27869DC2001A4D5E /* StatisticView.swift in Sources */,
+				F6CF9B2B2788116700A74543 /* CountyStatisticView.swift in Sources */,
+				F6F8C23D27869DC2001A4D5E /* NumberView.swift in Sources */,
 				F6F8C23227868780001A4D5E /* County.swift in Sources */,
-				F6F8C2402786A3BD001A4D5E /* StatisticType.swift in Sources */,
+				F6F8C2402786A3BD001A4D5E /* CovidStatisticType.swift in Sources */,
 				F6CF9B152788038B00A74543 /* CountyNames.swift in Sources */,
 				F6F8C2452786B307001A4D5E /* LinePlot.swift in Sources */,
-				F6F8C2312786873F001A4D5E /* CountyView.swift in Sources */,
+				F6F8C2312786873F001A4D5E /* CountyTrendView.swift in Sources */,
 				F6F8C23427868795001A4D5E /* CentralDataStore.swift in Sources */,
 				F6F8C23C27869D78001A4D5E /* RiskLevel.swift in Sources */,
 				F6CF9B132787FDDD00A74543 /* String+Helpers.swift in Sources */,

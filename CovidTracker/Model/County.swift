@@ -47,36 +47,45 @@ struct County {
         dayFromMostRecentDay(0)!
     }
     
-    func currentAverage(for type: StatisticType) -> Double {
+    func currentAverage(for type: CovidStatisticType) -> Double {
         switch type {
         case .avarageCases:
-            return latestDay.averageCases
+            return latestDay.averageCase
         case .averageDeaths:
-            return latestDay.averageDeaths
+            return latestDay.averageDeath
         }
     }
     
-    func currentChange(for type: StatisticType) -> Double? {
+    func newToday(for type: CovidStatisticType) -> Double {
+        switch type {
+        case .avarageCases:
+            return latestDay.cases
+        case .averageDeaths:
+            return latestDay.averageDeath
+        }
+    }
+    
+    func currentChange(for type: CovidStatisticType) -> Double? {
         guard let latestDay = self.dayFromMostRecentDay(0), let dayBefore = self.dayFromMostRecentDay(1) else { return nil }
 
         switch type {
         case .avarageCases:
-            return latestDay.averageCases - dayBefore.averageCases
+            return latestDay.averageCase - dayBefore.averageCase
         case .averageDeaths:
-            return latestDay.averageDeaths - dayBefore.averageDeaths
+            return latestDay.averageDeath - dayBefore.averageDeath
         }
     }
     
-    func risk(for type: StatisticType) -> RiskLevel {
+    func risk(for type: CovidStatisticType) -> RiskLevel {
         switch type {
         case .avarageCases:
-            return latestDay.averageCases.riskLevel(for: .avarageCases)
+            return latestDay.averageCase.riskLevel(for: .avarageCases)
         case .averageDeaths:
-            return latestDay.averageDeaths.riskLevel(for: .averageDeaths)
+            return latestDay.averageDeath.riskLevel(for: .averageDeaths)
         }
     }
     
-    func rawData(for type: StatisticType) -> [Double] {
+    func rawData(for type: CovidStatisticType) -> [Double] {
         return days.map { $0.average(for: type)}.reversed()
     }
     

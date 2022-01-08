@@ -8,23 +8,23 @@
 import SwiftUI
 import WidgetKit
 
-struct StatisticView: View {
+struct NumberView: View {
     var number: Double
     var change: Double?
     var risk: RiskLevel
     
     var body: some View {
         HStack(alignment: .lastTextBaseline) {
-            Spacer(minLength: 0)
             
             VStack(alignment: .trailing) {
                 HStack(alignment: .lastTextBaseline) {
                     
                     // primary number
                     Text(number.rounded(.towardZero), format: .number.notation(.compactName))
-                        .font(.largeTitle.bold())
+                        .font(.title.bold())
                         .foregroundColor(risk.color)
                         .fixedSize(horizontal: true, vertical: false)
+
                     
                     // change number
                     HStack(alignment: .lastTextBaseline, spacing: 0) {
@@ -58,7 +58,7 @@ struct StatisticView: View {
 
 struct StatisticView_Previews: PreviewProvider {
     static var previews: some View {
-        StatisticView(number: 23500, change: 300, risk: .safe)
+        NumberView(number: 23500, change: 300, risk: .safe)
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
